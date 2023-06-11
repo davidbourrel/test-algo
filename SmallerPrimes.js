@@ -1,3 +1,4 @@
+// prime number is only divided by one or by himself
 const isPrime = (number) => {
   for (let i = 2; i < number; i++) {
     if (number % i === 0) return false;
@@ -15,18 +16,18 @@ const smallerPrimes = (number) => {
     throw new Error(`${number} must be above 0`);
   }
 
-  const result = [];
+  const primeNumbers = [];
 
   for (let i = 2; i <= number; i++) {
     const isCurrentNumberPrime = isPrime(i);
 
     if (isCurrentNumberPrime) {
-      result.push(i);
+      primeNumbers.push(i);
     }
   }
-  return result;
+  return primeNumbers;
 };
 
-const results = smallerPrimes(20);
+const results = smallerPrimes(10);
 
 console.log(results);
